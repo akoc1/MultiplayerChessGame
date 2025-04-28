@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgujlhok1qhho"]
+
+[ext_resource type="Texture2D" uid="uid://y05fhsnm08od" path="res://assets/sprites/boards/rect-8x8.png" id="1_vh257"]
+[ext_resource type="Script" uid="uid://bhismjcxgerao" path="res://codes/GameScene.cs" id="1_xy3my"]
+
+[sub_resource type="Gradient" id="Gradient_vh257"]
+colors = PackedColorArray(0, 0, 0, 1, 0.133333, 0.133333, 0.133333, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xy3my"]
+gradient = SubResource("Gradient_vh257")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
+
+[node name="GameScene" type="Control"]
+custom_minimum_size = Vector2(960, 540)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xy3my")
+
+[node name="Background" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_xy3my")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 60
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Board" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+z_index = -1
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 6
+texture = ExtResource("1_vh257")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="BoardNode2D" type="Node2D" parent="MarginContainer/HBoxContainer/Board"]
+unique_name_in_owner = true
+z_index = 1
+z_as_relative = false
