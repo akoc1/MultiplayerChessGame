@@ -1,4 +1,19 @@
-# Multiplayer Chess
+# Multiplayer Chess Game
+
+**Group 1A**
+
+**Student Information**  
+- **Name:** Arif  
+- **Surname:** Koçli
+- **Student ID:** s207320  
+
+- **Name:** Hamza
+- **Surname:** Özavcı  
+- **Student ID:** s20
+
+- **Name:** Furkan  
+- **Surname:** Sevim  
+- **Student ID:** s207358
 
 This project is a **multiplayer chess** game, consisting of two main parts:
 
@@ -19,4 +34,3 @@ This project is a **multiplayer chess** game, consisting of two main parts:
 
 This project was created as a project assignment.  
 It is intended for educational purposes only.
-
