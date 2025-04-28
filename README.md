@@ -3,17 +3,11 @@
 **Group 1A**
 
 **Student Information**  
-- **Name:** Arif  
-- **Surname:** Koçli
-- **Student ID:** s207320  
+- **Name:** Arif Koçli s207320
 
-- **Name:** Hamza
-- **Surname:** Özavcı  
-- **Student ID:** s20
+- **Name:** Hamza Özavcı s20
 
-- **Name:** Furkan  
-- **Surname:** Sevim  
-- **Student ID:** s207358
+- **Name:** Furkan Sevim s207358
 
 This project is a **multiplayer chess** game, consisting of two main parts:
 
