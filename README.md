@@ -3,11 +3,9 @@
 **Group 1A**
 
 **Student Information**  
-- **Name:** Arif Koçli s207320
-
-- **Name:** Hamza Özavcı s20
-
-- **Name:** Furkan Sevim s207358
+Arif Koçli s207320
+Hamza Özavcı s20
+Furkan Sevim s207358
 
 This project is a **multiplayer chess** game, consisting of two main parts:
 
