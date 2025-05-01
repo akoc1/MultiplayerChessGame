@@ -21,6 +21,9 @@ Server/*.user
 Server/*.suo
 Server/.vs/
 
+# Publish Profiles
+Server/Properties/PublishProfiles/
+
 # Genel
 .DS_Store
 Thumbs.db
