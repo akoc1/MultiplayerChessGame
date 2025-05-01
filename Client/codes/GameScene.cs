@@ -29,8 +29,6 @@ public partial class GameScene : Control
         Vector2 availableBoardSize = Board.Size - new Vector2(16, 16);
         Vector2 squareSize = availableBoardSize / 8.0f;
 
-        GD.Print($"Board size: {Board.Size}, Available size for squares: {availableBoardSize}");
-
         for (int x = 0; x < 8; x++)
         {
             for (int y = 0; y < 8; y++)
@@ -38,7 +36,7 @@ public partial class GameScene : Control
                 if (y >= 2 && y < 6)
                     continue;
 
-                Vector2 position = boardPosition + new Vector2(6f + x * squareSize.X, 6f + y * squareSize.Y);
+                Vector2 position = boardPosition + new Vector2(8f + x * squareSize.X, 8f + y * squareSize.Y);
                 DrawRect(new Rect2(position, squareSize), Colors.Crimson, true, -1, true);
             }
         }
