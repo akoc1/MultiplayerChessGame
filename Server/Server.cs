@@ -22,7 +22,7 @@ namespace Server
         public async Task Start()
         {
             _tcpListener.Start();
-            ConsoleHelper.WriteLine($"Chess server started listening on: {PORT}", MessageType.Default);
+            ConsoleHelper.WriteLine($"Chess server started listening on port {PORT}", MessageType.Default);
 
             while (true)
             {
@@ -34,11 +34,11 @@ namespace Server
 
                 connectedClients.Add(godotClient);
 
-                await HandleClientAsync(godotClient);
+                HandleClientAsync(godotClient);
             }
         }
 
-        private async Task HandleClientAsync(GodotClient client)
+        private static async void HandleClientAsync(GodotClient client)
         {
             NetworkStream clientStream = client.TcpClient.GetStream();
 
@@ -69,7 +69,6 @@ namespace Server
             {
                 // Client disconnected from server
                 clientStream.Close();
-                connectedClients.Remove(client);
             }
         }
     }
