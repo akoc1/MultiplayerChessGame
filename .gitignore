@@ -19,6 +19,7 @@ Server/bin/
 Server/obj/
 Server/*.user
 Server/*.suo
+Server/.vs/
 
 # Genel
 .DS_Store
