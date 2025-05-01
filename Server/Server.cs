@@ -30,8 +30,6 @@ namespace Server
 
                 GodotClient godotClient = new GodotClient(client, Guid.NewGuid().ToString());
 
-                Console.WriteLine();
-
                 ConsoleHelper.WriteLine($"Client {godotClient.Id} connected to the server", MessageType.Success);
 
                 connectedClients.Add(godotClient);
