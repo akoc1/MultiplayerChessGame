@@ -10,14 +10,14 @@ using System.Text;
 
 namespace Server
 {
-    public class Server
+    public class ChessServer
     {
         private List<GodotClient> connectedClients = new List<GodotClient>();
         private static List<Game> Games = new List<Game>();
         private TcpListener _tcpListener;
         private const int PORT = 6542;
 
-        public Server()
+        public ChessServer()
         {
             _tcpListener = new TcpListener(IPAddress.Any, PORT);
         }

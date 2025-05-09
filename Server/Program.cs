@@ -4,9 +4,9 @@
     {
         static async Task Main(string[] args)
         {
-            Server server = new Server();
+            ChessServer chessServer = new ChessServer();
 
-            await server.Start();
+            await chessServer.Start();
 
             Console.ReadLine();
         }
