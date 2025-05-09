@@ -114,16 +114,19 @@ namespace Server
 
             if (isClientAlreadyInGame)
             {
+                var existingGameCode = Games.FirstOrDefault(game => game.Players.Contains(client)).GameCode;
+
                 result = new GameMessage
                 {
                     CreateGameResponse = new CreateGameResponse
                     {
                         Success = false,
-                        Result = CreateGameResponse.Types.ResponseResult.AlreadyInGame
+                        Result = CreateGameResponse.Types.ResponseResult.AlreadyInGame,
+                        GameCode = existingGameCode
                     }
                 };
 
-                ConsoleHelper.WriteLine($"{client.Id} is already in game.", MessageType.Warning);
+                ConsoleHelper.WriteLine($"{client.Id} is already in game {existingGameCode}.", MessageType.Warning);
             } else
             {
                 string gameCode = GameCodeGenerator.Generate();
@@ -194,6 +197,20 @@ namespace Server
                         success = true;
 
                         existingGame.Players.Add(client);
+
+                        if (existingGame.IsFull())
+                        {
+                            existingGame.StartGame();
+
+                            AnnounceGameStartAsync(existingGame.Players[0], existingGame.Players[1]);
+
+                            ConsoleHelper.WriteLine($"Game {existingGame.GameCode} is starting...", MessageType.Info);
+
+                            return;
+
+                            // Announce that the game is started. Clients,
+                            // will be redirected to the game page
+                        }
                     }
                 }
             }
@@ -201,6 +218,31 @@ namespace Server
             response.JoinGameResponse.Success = success;
 
             await WriteMessageAsync(stream, response);
+        }
+
+        private static async void AnnounceGameStartAsync(GodotClient playerOne, GodotClient playerTwo)
+        {
+            // Randomization of white or black piece
+            //Random rand = new Random();
+
+            //int result = rand.Next(1, 3);
+
+            //if (result == 2)
+            //{
+                
+            //}
+
+            var response = new GameMessage()
+            {
+                StartGame = new StartGame
+                {
+                    PlayerBlack = string.Empty,
+                    PlayerWhite = string.Empty
+                }
+            };
+
+            await WriteMessageAsync(playerOne.TcpClient.GetStream(), response);
+            await WriteMessageAsync(playerTwo.TcpClient.GetStream(), response);
         }
     }
 }
