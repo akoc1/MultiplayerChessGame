@@ -8,3 +8,11 @@ public enum MessageType
     Error,
     Warning
 }
+
+public enum GameState
+{
+    NotStarted,
+    OnGoing,
+    Finished,
+    Canceled
+}
