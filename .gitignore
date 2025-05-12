@@ -1,25 +1,29 @@
-# Godot 4+ specific ignores
-Client/.godot/
+# VISUAL STUDIO
 
-# Godot-specific ignores
-Client/.import/
-Client/export.cfg
-Client/export_presets.cfg
-
-# Imported translations (automatically generated from CSV files)
-*.translation
-
-# Mono-specific ignores
-Client/.mono/
-data_*/
-mono_crash.*.json
-
-# Visual Studio
-Server/bin/
-Server/obj/
+Server/[Bb]in/
+Server/[Oo]bj/
+Server/.vs/
 Server/*.user
 Server/*.suo
 
-# Genel
+*.log
+*.tmp
+*.bak
+
+# GODOT
+
+Client/.import/
+Client/.godot/
+Client/export.cfg
+Client/export_presets.cfg
+Client/.mono/
+Client/.editor/
+
+Client/bin/
+Client/*.exe
+Client/*.pck
+Client/*.apk
+
 .DS_Store
 Thumbs.db
+*.sln.docstates
