@@ -9,6 +9,8 @@ Client/bin/
 Client/*.pck
 Client/*.exe
 Client/*.apk
+Client/**/*.uid
+Client/**/*.import 
 
 # Visual Studio
 Server/bin/
