@@ -13,6 +13,7 @@ public partial class Game : Control
 
     Vector2 ResizedBoardSize = new Vector2(420, 420);
     Vector2 BoardTextureSize = new Vector2(784, 784);
+    Vector2 BorderSize = new Vector2(8, 8);
 
     public override void _Ready()
     {
@@ -28,9 +29,11 @@ public partial class Game : Control
         board = (Board)boardScene.Instantiate();
 
         board.Ratio = BoardTextureSize / ResizedBoardSize;
-        board.BorderSize /= board.Ratio;
+        BorderSize /= board.Ratio;
+        GD.Print(BorderSize);
+        board.BorderSize = new Vector2(BorderSize.X / 2, BorderSize.Y);
         board.SquareSize = (ResizedBoardSize - board.BorderSize * 2) / 8;
-        board.StartingPoint = board.BorderSize;
+        board.StartingPoint = BorderSize;
 
         BoardTexture.AddChild(board);
     }

@@ -44,6 +44,8 @@ public partial class Piece : Node2D
 
         SetImage();
         SnapToPoint();
+
+        GlobalPosition += SquareSize / 2;
     }
 
     private void SetImage()
@@ -117,7 +119,7 @@ public partial class Piece : Node2D
 
     public void SnapToPoint()
     {
-        GlobalPosition = VectorUtils.SnapToPoint(pieceArea.GlobalPosition, SquareSize);
+        GlobalPosition = VectorUtils.SnapToPoint(GlobalPosition, SquareSize - new Vector2(2.14f, 4.285f));
     }
 
     private void OnMouseEntered()

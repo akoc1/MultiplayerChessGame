@@ -1,9 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvdmrgyj51pnq"]
+[gd_scene load_steps=5 format=3 uid="uid://dvdmrgyj51pnq"]
 
 [ext_resource type="Script" uid="uid://b3yd1pd27eo07" path="res://codes/Game.cs" id="1_cpr0p"]
 [ext_resource type="Texture2D" uid="uid://y05fhsnm08od" path="res://assets/sprites/boards/rect-8x8.png" id="2_78awf"]
-[ext_resource type="Script" uid="uid://bbowxjlxbdp8l" path="res://codes/Board.cs" id="3_78awf"]
-[ext_resource type="PackedScene" uid="uid://dvlhmseolek76" path="res://scenes/DragManager.tscn" id="4_s0nni"]
 
 [sub_resource type="Gradient" id="Gradient_cxv17"]
 colors = PackedColorArray(0, 0, 0, 1, 0.133333, 0.133333, 0.133333, 1)
@@ -60,9 +58,3 @@ mouse_filter = 2
 texture = ExtResource("2_78awf")
 expand_mode = 2
 stretch_mode = 5
-
-[node name="BoardNode" type="Node2D" parent="MarginContainer/HBoxContainer/BoardTexture"]
-z_index = 10
-script = ExtResource("3_78awf")
-
-[node name="DragManager" parent="MarginContainer/HBoxContainer/BoardTexture/BoardNode" instance=ExtResource("4_s0nni")]
