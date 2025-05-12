@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvlhmseolek76"]
+
+[ext_resource type="Script" uid="uid://dmhhykqw4resp" path="res://codes/DragManager.cs" id="1_y7igy"]
+
+[node name="DragManager" type="Node"]
+script = ExtResource("1_y7igy")

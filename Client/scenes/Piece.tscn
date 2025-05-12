@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://nppk7qleqcp6"]
+
+[ext_resource type="Script" uid="uid://b5lj8ova156bt" path="res://codes/Piece.cs" id="1_tk1p6"]
+[ext_resource type="Texture2D" uid="uid://d0pf4vs4jv5lk" path="res://assets/sprites/pieces/rook-w.png" id="2_tk1p6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxuho"]
+size = Vector2(51.45, 51.45)
+
+[node name="Piece" type="Node2D"]
+script = ExtResource("1_tk1p6")
+
+[node name="Area" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="PieceSprite" type="Sprite2D" parent="Area"]
+unique_name_in_owner = true
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("2_tk1p6")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Area"]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_lxuho")
+
+[connection signal="mouse_entered" from="Area" to="." method="OnMouseEntered"]
+[connection signal="mouse_exited" from="Area" to="." method="OnMouseExited"]

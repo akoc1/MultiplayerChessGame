@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvdmrgyj51pnq"]
+
+[ext_resource type="Script" uid="uid://b3yd1pd27eo07" path="res://codes/Game.cs" id="1_cpr0p"]
+[ext_resource type="Texture2D" uid="uid://y05fhsnm08od" path="res://assets/sprites/boards/rect-8x8.png" id="2_78awf"]
+[ext_resource type="Script" uid="uid://bbowxjlxbdp8l" path="res://codes/Board.cs" id="3_78awf"]
+[ext_resource type="PackedScene" uid="uid://dvlhmseolek76" path="res://scenes/DragManager.tscn" id="4_s0nni"]
+
+[sub_resource type="Gradient" id="Gradient_cxv17"]
+colors = PackedColorArray(0, 0, 0, 1, 0.133333, 0.133333, 0.133333, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xy3my"]
+gradient = SubResource("Gradient_cxv17")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
+
+[node name="Game" type="Control"]
+custom_minimum_size = Vector2(960, 540)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_cpr0p")
+
+[node name="Background" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_xy3my")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 60
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="BoardTexture" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+z_index = -1
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 6
+mouse_filter = 2
+texture = ExtResource("2_78awf")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="BoardNode" type="Node2D" parent="MarginContainer/HBoxContainer/BoardTexture"]
+z_index = 10
+script = ExtResource("3_78awf")
+
+[node name="DragManager" parent="MarginContainer/HBoxContainer/BoardTexture/BoardNode" instance=ExtResource("4_s0nni")]

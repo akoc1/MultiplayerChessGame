@@ -1,0 +1,79 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://coao1nituhmpe"]
+
+[ext_resource type="FontFile" uid="uid://pky4cg6ohor7" path="res://assets/fonts/Mulish-Regular.ttf" id="1_mwhd1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mwhd1"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(2.02149e-06, 0.698852, 0.591058, 1)
+border_width_bottom = 6
+border_color = Color(3.89859e-06, 0.587445, 0.497113, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nva1m"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(2.02149e-06, 0.698852, 0.591058, 1)
+border_color = Color(3.89859e-06, 0.587445, 0.497113, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pkyf"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(2.02149e-06, 0.698852, 0.591058, 1)
+border_width_bottom = 4
+border_color = Color(3.89859e-06, 0.587445, 0.497113, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_og51b"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(5.14999e-06, 0.619302, 0.522883, 1)
+border_width_bottom = 4
+border_color = Color(4.66868e-06, 0.451911, 0.380636, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uwk1s"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(2.02149e-06, 0.698852, 0.591058, 1)
+border_color = Color(3.89859e-06, 0.587445, 0.497113, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[resource]
+default_font = ExtResource("1_mwhd1")
+default_font_size = 28
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.428686, 1, 0.877455, 1)
+Button/fonts/font = ExtResource("1_mwhd1")
+Button/styles/disabled = SubResource("StyleBoxFlat_mwhd1")
+Button/styles/focus = SubResource("StyleBoxFlat_nva1m")
+Button/styles/hover = SubResource("StyleBoxFlat_2pkyf")
+Button/styles/normal = SubResource("StyleBoxFlat_og51b")
+Button/styles/pressed = SubResource("StyleBoxFlat_uwk1s")

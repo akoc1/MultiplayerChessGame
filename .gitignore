@@ -1,29 +1,32 @@
-# VISUAL STUDIO
+# Godot
+Client/.import/
+Client/.godot/
+Client/.mono/
+Client/.editor/
+Client/export.cfg
+Client/export_presets.cfg
+Client/bin/
+Client/*.pck
+Client/*.exe
+Client/*.apk
 
-Server/[Bb]in/
-Server/[Oo]bj/
+# Visual Studio
+Server/bin/
+Server/obj/
 Server/.vs/
 Server/*.user
 Server/*.suo
+Server/*.csproj.user
+Server/*.sln.docstates
 
+# Protobuf
+Proto/*.cs
+Proto/__pycache__/
+
+# OS / Genel
 *.log
 *.tmp
-*.bak
-
-# GODOT
-
-Client/.import/
-Client/.godot/
-Client/export.cfg
-Client/export_presets.cfg
-Client/.mono/
-Client/.editor/
-
-Client/bin/
-Client/*.exe
-Client/*.pck
-Client/*.apk
-
-.DS_Store
+*.DS_Store
 Thumbs.db
-*.sln.docstates
+.vscode/
+.idea/

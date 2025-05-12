@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cehkya7vqipxc"]
+
+[ext_resource type="Script" uid="uid://bbowxjlxbdp8l" path="res://codes/Board.cs" id="1_hs2ul"]
+[ext_resource type="PackedScene" uid="uid://dvlhmseolek76" path="res://scenes/DragManager.tscn" id="2_hs2ul"]
+
+[node name="BoardNode" type="Node2D"]
+script = ExtResource("1_hs2ul")
+
+[node name="DragManager" parent="." instance=ExtResource("2_hs2ul")]

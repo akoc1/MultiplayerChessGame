@@ -1,0 +1,51 @@
+﻿syntax = "proto3";
+
+message MovePiece {
+  string from = 1;
+  string to = 2;
+}
+
+message StartGame {
+  string player_white = 1;
+  string player_black = 2;
+}
+
+message CreateGameRequest {
+  string id = 1;
+}
+
+message CreateGameResponse {
+  bool success = 1;
+  ResponseResult result = 2;
+  string game_code = 3;
+
+  enum ResponseResult {
+    ALREADY_IN_GAME = 0;
+  }
+}
+
+message JoinGameRequest {
+    string id = 1;
+    string game_code = 2;
+}
+
+message JoinGameResponse {
+    bool success = 1;
+    ResponseResult result = 2;
+
+    enum ResponseResult {
+        GAME_IS_FULL = 0;
+        DOES_NOT_EXIST = 1;
+    }
+}
+
+message GameMessage {
+  oneof payload {
+    MovePiece move_piece = 1;
+    StartGame start_game = 2;
+    CreateGameRequest create_game_request = 3;
+    CreateGameResponse create_game_response = 4;
+    JoinGameRequest join_game_request = 5;
+    JoinGameResponse join_game_response = 6;
+  }
+}

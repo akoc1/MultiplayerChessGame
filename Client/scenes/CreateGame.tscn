@@ -1,0 +1,304 @@
+[gd_scene load_steps=23 format=3 uid="uid://cfhlw2q3t1qwn"]
+
+[ext_resource type="Script" uid="uid://cn70lw6ik0qu8" path="res://codes/CreateGame.cs" id="1_oxte3"]
+[ext_resource type="FontFile" uid="uid://pky4cg6ohor7" path="res://assets/fonts/Mulish-Regular.ttf" id="2_8vq8k"]
+[ext_resource type="Theme" uid="uid://coao1nituhmpe" path="res://resources/default_theme.tres" id="3_0ccab"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4y6a"]
+bg_color = Color(0.156031, 0.156031, 0.156031, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="LabelSettings" id="LabelSettings_hwm2m"]
+font = ExtResource("2_8vq8k")
+font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ykm82"]
+bg_color = Color(0.114902, 0.114902, 0.114902, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtib2"]
+bg_color = Color(0, 0.698039, 0.592157, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="LabelSettings" id="LabelSettings_oxte3"]
+font = ExtResource("2_8vq8k")
+font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c8mam"]
+content_margin_top = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.168542, 0.168542, 0.168542, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mwhd1"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(2.02149e-06, 0.698852, 0.591058, 1)
+border_width_bottom = 6
+border_color = Color(3.89859e-06, 0.587445, 0.497113, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nva1m"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(2.02149e-06, 0.698852, 0.591058, 1)
+border_color = Color(3.89859e-06, 0.587445, 0.497113, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pkyf"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(2.02149e-06, 0.698852, 0.591058, 1)
+border_width_bottom = 4
+border_color = Color(3.89859e-06, 0.587445, 0.497113, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_og51b"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(5.14999e-06, 0.619302, 0.522883, 1)
+border_width_bottom = 4
+border_color = Color(4.66868e-06, 0.451911, 0.380636, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uwk1s"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(2.02149e-06, 0.698852, 0.591058, 1)
+border_color = Color(3.89859e-06, 0.587445, 0.497113, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="Theme" id="Theme_7gk6w"]
+default_font = ExtResource("2_8vq8k")
+default_font_size = 28
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.428686, 1, 0.877455, 1)
+Button/fonts/font = ExtResource("2_8vq8k")
+Button/styles/disabled = SubResource("StyleBoxFlat_mwhd1")
+Button/styles/focus = SubResource("StyleBoxFlat_nva1m")
+Button/styles/hover = SubResource("StyleBoxFlat_2pkyf")
+Button/styles/normal = SubResource("StyleBoxFlat_og51b")
+Button/styles/pressed = SubResource("StyleBoxFlat_uwk1s")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ccab"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.862745, 0.0784314, 0.235294, 1)
+border_color = Color(0.638409, 0.0347609, 0.161935, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gk6w"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.862745, 0.0784314, 0.235294, 1)
+border_width_bottom = 4
+border_color = Color(0.638409, 0.0347609, 0.161935, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8vq8k"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.862745, 0.0784314, 0.235294, 1)
+border_width_bottom = 4
+border_color = Color(0.638409, 0.0347609, 0.161935, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="Theme" id="Theme_m4y6a"]
+default_font = ExtResource("2_8vq8k")
+default_font_size = 28
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.994952, 0.448163, 0.468608, 1)
+Button/fonts/font = ExtResource("2_8vq8k")
+Button/styles/disabled = SubResource("StyleBoxFlat_0ccab")
+Button/styles/focus = SubResource("StyleBoxFlat_0ccab")
+Button/styles/hover = SubResource("StyleBoxFlat_7gk6w")
+Button/styles/normal = SubResource("StyleBoxFlat_8vq8k")
+Button/styles/pressed = SubResource("StyleBoxFlat_0ccab")
+
+[sub_resource type="Animation" id="Animation_hwm2m"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_oxte3"]
+resource_name = "rotating_horse"
+length = 0.8
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c8mam"]
+_data = {
+&"RESET": SubResource("Animation_hwm2m"),
+&"rotating_horse": SubResource("Animation_oxte3")
+}
+
+[node name="CreateGame" type="Control"]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oxte3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.101961, 0.101961, 0.101961, 0.647059)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(480, 270)
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 125
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 125
+
+[node name="Background" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_m4y6a")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="CreatingGameContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+
+[node name="CreatingGameLabel" type="Label" parent="MarginContainer/MarginContainer/CreatingGameContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Creating a game..."
+label_settings = SubResource("LabelSettings_hwm2m")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="LoadingPb" type="ProgressBar" parent="MarginContainer/MarginContainer/CreatingGameContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_ykm82")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xtib2")
+indeterminate = true
+editor_preview_indeterminate = true
+
+[node name="GameCreatedContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+
+[node name="InfoLabel" type="Label" parent="MarginContainer/MarginContainer/GameCreatedContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Game successfully created. Share this code with your friends!"
+label_settings = SubResource("LabelSettings_oxte3")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="CodeLabel" type="Label" parent="MarginContainer/MarginContainer/GameCreatedContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+theme = ExtResource("3_0ccab")
+theme_override_styles/normal = SubResource("StyleBoxFlat_c8mam")
+text = "AXDKW3"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/GameCreatedContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="CopyButton" type="Button" parent="MarginContainer/MarginContainer/GameCreatedContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_7gk6w")
+text = "Copy"
+
+[node name="CancelButton" type="Button" parent="MarginContainer/MarginContainer/GameCreatedContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_m4y6a")
+text = "Cancel"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_c8mam")
+}
+
+[connection signal="pressed" from="MarginContainer/MarginContainer/GameCreatedContainer/HBoxContainer/CopyButton" to="." method="_on_copy_button_pressed"]
+[connection signal="pressed" from="MarginContainer/MarginContainer/GameCreatedContainer/HBoxContainer/CancelButton" to="." method="_on_cancel_button_pressed"]

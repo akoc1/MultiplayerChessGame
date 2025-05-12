@@ -1,4 +1,95 @@
-[gd_scene format=3 uid="uid://bodr0dl6tfqqe"]
+[gd_scene load_steps=18 format=3 uid="uid://bodr0dl6tfqqe"]
+
+[ext_resource type="FontFile" uid="uid://pky4cg6ohor7" path="res://assets/fonts/Mulish-Regular.ttf" id="1_0ykhv"]
+[ext_resource type="Script" uid="uid://dmyp2x75xl1lg" path="res://codes/MainMenu.cs" id="1_l72w3"]
+[ext_resource type="Texture2D" uid="uid://bn8mr2okwqh42" path="res://assets/sprites/pieces/knight-w.png" id="1_ow34m"]
+[ext_resource type="Texture2D" uid="uid://s7dvrgkna1kt" path="res://assets/sprites/pieces/pawn-w.png" id="2_0ykhv"]
+[ext_resource type="Theme" uid="uid://coao1nituhmpe" path="res://resources/default_theme.tres" id="2_2wh52"]
+[ext_resource type="Texture2D" uid="uid://d0pf4vs4jv5lk" path="res://assets/sprites/pieces/rook-w.png" id="3_2wh52"]
+
+[sub_resource type="Animation" id="Animation_ucygd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Vbox:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_826wr"]
+resource_name = "init"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Vbox:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ukcvp"]
+resource_name = "scroll_anim"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yqorp"]
+_data = {
+&"RESET": SubResource("Animation_ucygd"),
+&"init": SubResource("Animation_826wr"),
+&"scroll_anim": SubResource("Animation_ukcvp")
+}
+
+[sub_resource type="Gradient" id="Gradient_vh257"]
+colors = PackedColorArray(0.139303, 0.149452, 0.410375, 1, 0.161639, 0.205518, 0.31643, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ukcvp"]
+gradient = SubResource("Gradient_vh257")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_826wr"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.0588235, 0.0666667, 0.152941, 1)
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_mipys"]
+font = ExtResource("1_0ykhv")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l72w3"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+shadow_color = Color(0, 0, 0, 0)
+shadow_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_826wr"]
+font = ExtResource("1_0ykhv")
+font_size = 32
+outline_size = 14
+outline_color = Color(0.141176, 0.156863, 0.392157, 1)
+shadow_size = 15
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ucygd"]
+font = ExtResource("1_0ykhv")
+font_size = 18
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -7,3 +98,137 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_l72w3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_yqorp")
+}
+autoplay = "init"
+
+[node name="Background" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_ukcvp")
+
+[node name="Vbox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(480, 270)
+
+[node name="StatusLabel" type="Label" parent="Vbox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 10)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_826wr")
+text = "Connecting to the server..."
+label_settings = SubResource("LabelSettings_mipys")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Vbox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 75
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Vbox/MarginContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Vbox/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Background" type="Panel" parent="Vbox/MarginContainer/HBoxContainer/Control"]
+self_modulate = Color(1, 1, 1, 0.588235)
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_l72w3")
+
+[node name="MarginContainer" type="MarginContainer" parent="Vbox/MarginContainer/HBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Vbox/MarginContainer/HBoxContainer/Control/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Image" type="TextureRect" parent="Vbox/MarginContainer/HBoxContainer/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+texture = ExtResource("1_ow34m")
+stretch_mode = 3
+
+[node name="WelcomeLabel" type="Label" parent="Vbox/MarginContainer/HBoxContainer/Control/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 2
+text = "Welcome to Multiplayer Chess!"
+label_settings = SubResource("LabelSettings_826wr")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="WelcomeLabel2" type="Label" parent="Vbox/MarginContainer/HBoxContainer/Control/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 2
+text = "You can a create a game or join an existing one."
+label_settings = SubResource("LabelSettings_ucygd")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Vbox/MarginContainer/HBoxContainer/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/separation = 25
+
+[node name="CreateGameButton" type="Button" parent="Vbox/MarginContainer/HBoxContainer/Control/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_2wh52")
+disabled = true
+text = "Create Game"
+icon = ExtResource("2_0ykhv")
+expand_icon = true
+
+[node name="JoinGameButton" type="Button" parent="Vbox/MarginContainer/HBoxContainer/Control/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_2wh52")
+disabled = true
+text = "Join Game"
+icon = ExtResource("3_2wh52")
+expand_icon = true
+
+[connection signal="pressed" from="Vbox/MarginContainer/HBoxContainer/Control/MarginContainer/VBoxContainer/HBoxContainer/CreateGameButton" to="." method="_on_create_game_button_pressed"]
+[connection signal="pressed" from="Vbox/MarginContainer/HBoxContainer/Control/MarginContainer/VBoxContainer/HBoxContainer/JoinGameButton" to="." method="_on_join_game_button_pressed"]
